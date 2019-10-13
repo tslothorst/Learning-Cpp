@@ -5,10 +5,11 @@
 
 using namespace std;
 void print_menu();
-void exit_program();
 void add_number(vector<int> &userNumbers);
-void display_list(vector<int>& userNumbers);
-string display_avarage(vector<int> &userNumbers);
+void display_list(vector<int> &userNumbers);
+double get_avgnum(vector<int> &userNumbers);
+int get_smallnum(vector<int> &userNumbers);
+int get_largenum(vector<int> &userNumbers);
 
 int main()
 {
@@ -16,9 +17,7 @@ int main()
 	while (true)
 	{
 		char choice{};
-		cout << "\nPlease make a choice from these options" << endl;
-		cout << "P - Print numbers\nA - Add a number\nM - Display mean of the numbers\nS - Display the smallest number\nL - Display the largest number\nQ - Quit\n";
-		cout << "Input: ";
+		print_menu();
 		cin >> choice;
 
 		if (tolower(choice) == 'q')
@@ -28,62 +27,33 @@ int main()
 		}
 		if (towlower(choice) == 'a')
 		{
-			int userNum{};
-			cout << "Please enter an integer: ";
-			cin >> userNum;
-			userNumbers.push_back(userNum);
-			cout << userNum << " added to list!" << endl;
+			add_number(userNumbers);
 		}
 		if (tolower(choice) == 'p')
 		{
-			if (userNumbers.size() == 0)
-			{
-				cout << "[] - the list is empty" << endl;
-			}
-			for (size_t i = 0; i < userNumbers.size(); i++)
-			{
-				cout << userNumbers.at(i) << endl;
-			}
+			display_list(userNumbers);
 		}
 		if (tolower(choice) == 'm')
 		{
-			double buffer{};
-			double avgNum{};
-			for (size_t i = 0; i < userNumbers.size(); i++)
-			{
-				buffer += userNumbers[i];
-				avgNum = buffer / userNumbers.size();
-			}
-			cout << "Average of the elements in the list is: " << avgNum << endl;
+			cout << "Average of the elements in the list is: " << get_avgnum(userNumbers) << endl;
 		}
 		if (tolower(choice) == 's')
 		{
-			auto result = min_element(userNumbers.begin(), userNumbers.end());
-			int smallpos = distance(userNumbers.begin(), result);
-			cout << "The smallest number in the list is: " << userNumbers.at(smallpos) << endl;
+			cout << "The smallest number in the list is: " << get_smallnum(userNumbers) << endl;
 		}
 		if (tolower(choice) == 'l')
 		{
-			auto result = max_element(userNumbers.begin(), userNumbers.end());
-			int largepos = distance(userNumbers.begin(), result);
-			cout << "The smallest number in the list is: " << userNumbers.at(largepos) << endl;
+			cout << "The largest number in the list is: " << get_largenum(userNumbers) << endl;
 		}
 	}
 	return 0;
 }
 
 void print_menu()
-{
-	char choice{};
+{	
 	cout << "\nPlease make a choice from these options" << endl;
 	cout << "P - Print numbers\nA - Add a number\nM - Display mean of the numbers\nS - Display the smallest number\nL - Display the largest number\nQ - Quit\n";
-	cout << "Input: ";
-	cin >> choice;
-}
-
-void exit_program() 
-{
-	cout << "Goodbye\n";	
+	cout << "Input: ";	
 }
 
 void add_number(vector<int> &userNumbers) 
@@ -95,7 +65,7 @@ void add_number(vector<int> &userNumbers)
 	cout << userNum << " added to list!" << endl;
 }
 
-void display_list(vector<int> &userNumbers) 
+void display_list(const vector<int> &userNumbers) 
 {
 	if (userNumbers.size() == 0)
 	{
@@ -107,7 +77,7 @@ void display_list(vector<int> &userNumbers)
 	}
 }
 
-string display_avarage(vector<int> &userNumbers) 
+double get_avgnum(const vector<int> &userNumbers) 
 {
 	double buffer{};
 	double avgNum{};
@@ -116,7 +86,23 @@ string display_avarage(vector<int> &userNumbers)
 		buffer += userNumbers[i];
 		avgNum = buffer / userNumbers.size();
 	}
-	return string "Average of the elements in the list is: " << avgNum << endl;
+	return avgNum;
+}
+
+int get_smallnum(const vector<int> &userNumbers) 
+{
+	auto result = min_element(userNumbers.begin(), userNumbers.end());
+	int smallpos = distance(userNumbers.begin(), result);
+	int smallnum = userNumbers.at(smallpos);
+	return smallnum;
+}
+
+int get_largenum(const vector<int> &userNumbers) 
+{
+	auto result = max_element(userNumbers.begin(), userNumbers.end());
+	int largepos = distance(userNumbers.begin(), result);
+	int largenum = userNumbers.at(largepos);
+	return largenum;
 }
 
 
