@@ -6,10 +6,10 @@
 using namespace std;
 void print_menu();
 void add_number(vector<int> &userNumbers);
-void display_list(vector<int> &userNumbers);
-double get_avgnum(vector<int> &userNumbers);
-int get_smallnum(vector<int> &userNumbers);
-int get_largenum(vector<int> &userNumbers);
+void display_list(const vector<int> &userNumbers);
+double get_avgnum(const vector<int> &userNumbers);
+int get_smallnum(const vector<int> &userNumbers);
+int get_largenum(const vector<int> &userNumbers);
 
 int main()
 {
