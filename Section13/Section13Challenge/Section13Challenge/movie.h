@@ -34,6 +34,8 @@ public:
 		movieTimesWatched++;
 	}
 
+	void display() const;
+
 	std::string get_title()
 	{
 		return movieTitle;
