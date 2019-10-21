@@ -2,11 +2,6 @@
 #include<string>
 class movie
 {
-private:
-	std::string movieTitle;
-	std::string movieRating;
-	int movieTimesWatched;
-
 public:
 	//Constructor
 	movie(std::string title, std::string rating, int watched);
@@ -17,40 +12,13 @@ public:
 	//Destructor
 	~movie();
 
-	void set_title(std::string title)
-	{
-		movieTitle = title;
-	}
-
-	void set_rating(std::string rating)
-	{
-		if (rating == "G" || rating == "PG" || rating == "PG-13" || rating == "R")
-			movieRating = rating;
-
-	}
-
-	void increment_timeswatch(int watched)
-	{
-		movieTimesWatched++;
-	}
-
+	// Method prototypes
+	void set_title(std::string title);	
+	void set_rating(std::string rating);
+	void increment_timeswatch(int watched);
 	void display() const;
-
-	std::string get_title()
-	{
-		return movieTitle;
-	}
-
-	std::string get_rating()
-	{
-		return movieRating;
-	}
-
-	int get_timeswatched() 
-	{
-		return movieTimesWatched;
-	}
-
-
+	std::string get_title();
+	std::string get_rating();
+	int get_timeswatched();	
 };
 
