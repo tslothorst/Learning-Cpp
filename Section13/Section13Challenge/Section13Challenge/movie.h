@@ -2,6 +2,10 @@
 #include<string>
 class movie
 {
+private:
+	std::string movieTitle;
+	std::string movieRating;
+	int movieTimesWatched;
 public:
 	//Constructor
 	movie(std::string title, std::string rating, int watched);
