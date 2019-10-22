@@ -21,7 +21,7 @@ public:
 	void set_rating(std::string rating);
 	void increment_timeswatch();
 	void display() const;
-	std::string get_title();
+	std::string get_title() const;
 	std::string get_rating();
 	int get_timeswatched();	
 };

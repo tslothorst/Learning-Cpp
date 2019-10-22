@@ -47,7 +47,7 @@
 		std::cout << movieTitle << ", " << movieRating << ", " << movieTimesWatched << std::endl;
 	}
 
-	std::string movie::get_title()
+	std::string movie::get_title() const
 	{
 		return movie::movieTitle;
 	}

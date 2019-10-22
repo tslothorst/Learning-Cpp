@@ -6,6 +6,8 @@
 
 class movies
 {
+private:
+	std::vector<movie> movieCollection;
 
 public:
 	// No arg constructor
@@ -13,9 +15,9 @@ public:
 
 	~movies();
 
-	static void display();
-	static bool add_movie(std::string name, std::string rating, int watched);
-	static bool increment_watched(std::string title);
+	void display();
+	bool add_movie(std::string name, std::string rating, int watched);
+	bool increment_watched(std::string title);
 
 };
 

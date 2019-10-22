@@ -1,30 +1,27 @@
 #include "movies.h"
 #include<iostream>
 
-class movies 
-{
-private:
-	std::vector<movie> movieCollection;
-	movies()
+
+	movies::movies()
 	{				
 	}
 
-	~movies()
+	movies::~movies()
 	{
 	}
 
-	void display()
+	void movies::display()
 	{
-		for(auto m : movieCollection)
+		for(const auto &m : movieCollection)
 		{
 			m.display();
 		}
 	}
 
-	bool add_movie(std::string name, std::string rating, int watched)
+	bool movies::add_movie(std::string name, std::string rating, int watched)
 	{	
 		movie film(name, rating, watched);
-		for (auto m : movieCollection) 
+		for (const auto &m : movieCollection) 
 		{
 			if (m.get_title() == name)
 			{
@@ -35,7 +32,7 @@ private:
 		return true;
 	}
 
-	bool increment_watched(std::string title)
+	bool movies::increment_watched(std::string title)
 	{
 		for (auto m : movieCollection) 
 		{
@@ -45,7 +42,5 @@ private:
 		}
 		return false;
 	}
-
-};
 
 
