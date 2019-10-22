@@ -6,11 +6,12 @@
 
 class movies
 {
-private:
-	std::vector<movie> movieVec;
+
 public:
 	// No arg constructor
 	movies();
+
+	~movies();
 
 	static void display();
 	static bool add_movie(std::string name, std::string rating, int watched);
