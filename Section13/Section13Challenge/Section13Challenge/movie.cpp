@@ -20,11 +20,6 @@
 	}
 
 	// Implement the display method
-	void movie::display() const
-	{
-		std::cout << movieTitle << ", " << movieRating << ", " << movieTimesWatched << std::endl;
-	}
-
 	void movie::set_title(std::string title)
 	{
 		movie::movieTitle = title;

@@ -36,9 +36,11 @@
 	{
 		for (auto m : movieCollection) 
 		{
-			if (m.get_title() == title)
+			if (m.get_title() == title) 
+			{
 				m.increment_timeswatch();
-			return true;
+				return true;
+			}
 		}
 		return false;
 	}
