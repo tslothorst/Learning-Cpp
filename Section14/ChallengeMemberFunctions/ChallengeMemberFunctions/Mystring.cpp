@@ -1,6 +1,7 @@
 #include "Mystring.h"
 #include <iostream>
 #include <cstring>
+#include<cctype>
 
 // No-args constructor
 Mystring::Mystring()
@@ -64,6 +65,19 @@ Mystring& Mystring::operator=(Mystring&& rhs) {
 	str = rhs.str;
 	rhs.str = nullptr;
 	return *this;
+}
+
+Mystring Mystring::operator-() const
+{
+	char* buff = new char[std::strlen(str) + 1];
+	std::strcpy(buff, str);
+	for (size_t i = 0; i < std::strlen(buff); i++)
+	{
+		buff[i] = std::tolower(buff[i]);
+	}
+	Mystring temp{ buff };
+	delete[] buff;
+	return temp;
 }
 
 
