@@ -18,7 +18,7 @@ public:
 	Mystring& operator=(Mystring&& rhs);           // Move assignment
 	Mystring operator-() const;				// Returns lowercase object
 	bool operator==(const Mystring& rhs);			// Comparison
-
+	bool operator!=(const Mystring& rhs);
 	void display() const;
 
 	int get_length() const;                               // getters

@@ -92,6 +92,14 @@ bool Mystring::operator==(const Mystring& rhs)
 	}
 }
 
+bool Mystring::operator!=(const Mystring& rhs)
+{
+	if (std::strcmp(str, rhs.str) == 0)
+		return false;
+	else
+		return true;
+}
+
 
 // Display method
 void Mystring::display() const {
