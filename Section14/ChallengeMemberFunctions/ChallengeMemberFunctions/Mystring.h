@@ -19,6 +19,8 @@ public:
 	Mystring operator-() const;				// Returns lowercase object
 	bool operator==(const Mystring& rhs);			// Comparison
 	bool operator!=(const Mystring& rhs);
+	bool operator<(const Mystring& rhs);			// Smaller then comparison on Mystring objects (number of chars)
+
 	void display() const;
 
 	int get_length() const;                               // getters

@@ -100,6 +100,14 @@ bool Mystring::operator!=(const Mystring& rhs)
 		return true;
 }
 
+bool Mystring::operator<(const Mystring& rhs)
+{
+	if (std::strlen(str) < std::strlen(rhs.str))
+		return true;
+	else
+		return false;
+}
+
 
 // Display method
 void Mystring::display() const {
