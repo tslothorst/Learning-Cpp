@@ -20,6 +20,7 @@ public:
 	bool operator==(const Mystring& rhs);			// Comparison
 	bool operator!=(const Mystring& rhs);
 	bool operator<(const Mystring& rhs);			// Smaller then comparison on Mystring objects (number of chars)
+	bool operator>(const Mystring& rhs);			// Larger then comparison on Mystring objects (number of chars)
 
 	void display() const;
 
