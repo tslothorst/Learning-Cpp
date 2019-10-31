@@ -21,6 +21,7 @@ public:
 	bool operator!=(const Mystring& rhs);
 	bool operator<(const Mystring& rhs);			// Smaller then comparison on Mystring objects (number of chars)
 	bool operator>(const Mystring& rhs);			// Larger then comparison on Mystring objects (number of chars)
+	Mystring operator+(const Mystring& rhs) const;		// Concatenation
 
 	void display() const;
 
