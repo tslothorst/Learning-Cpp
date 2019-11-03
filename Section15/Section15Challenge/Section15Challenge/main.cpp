@@ -4,14 +4,15 @@
 #include "Savings_Account.h"
 #include "Account_Util.h"
 
-using namespace std;
+//using namespace std;
 
-int main() {
-	cout.precision(2);
-	cout << fixed;
+int main() 
+{
+	std::cout.precision(2);
+	std::cout << std::fixed;
 
 	// Accounts
-	vector<Account> accounts;
+	std::vector<Account> accounts;
 	accounts.push_back(Account{});
 	accounts.push_back(Account{ "Larry" });
 	accounts.push_back(Account{ "Moe", 2000 });
@@ -23,7 +24,7 @@ int main() {
 
 	// Savings 
 
-	vector<Savings_Account> sav_accounts;
+	std::vector<Savings_Account> sav_accounts;
 	sav_accounts.push_back(Savings_Account{});
 	sav_accounts.push_back(Savings_Account{ "Superman" });
 	sav_accounts.push_back(Savings_Account{ "Batman", 2000 });
