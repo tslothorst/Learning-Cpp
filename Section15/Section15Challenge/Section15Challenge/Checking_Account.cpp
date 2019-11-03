@@ -6,5 +6,6 @@ Checking_Account::Checking_Account(std::string name, double balance): withdraw_f
 
 bool Checking_Account::withdraw(double amount)
 {
-	return false;
+	balance -= withdraw_fee;
+	return Account::withdraw(amount);	
 }
