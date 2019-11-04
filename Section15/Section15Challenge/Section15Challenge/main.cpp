@@ -53,8 +53,8 @@ int main()
 	trust_accounts.push_back(Trust_Account{});
 	trust_accounts.push_back(Trust_Account{ "Mike" });
 	trust_accounts.push_back(Trust_Account{ "Joel", 2000 });
-	trust_accounts.push_back(Trust_Account{ "Crow", 5000 });
-	trust_accounts.push_back(Trust_Account{ "Servo", 10000 });
+	trust_accounts.push_back(Trust_Account{ "Crow", 5000, 5.0 });
+	trust_accounts.push_back(Trust_Account{ "Servo", 10000, 10.0 });
 
 	(*utility).display(trust_accounts);
 	(*utility).deposit(trust_accounts, 5000);
