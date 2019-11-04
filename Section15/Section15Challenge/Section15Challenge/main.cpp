@@ -35,6 +35,18 @@ int main()
 	(*utility).deposit(sav_accounts, 1000);
 	(*utility).withdraw(sav_accounts, 2000);
 
+	// Checking accounts
+
+	std::vector<Checking_Account> check_accounts;
+	check_accounts.push_back(Checking_Account{});
+	check_accounts.push_back(Checking_Account{ "Tony" });
+	check_accounts.push_back(Checking_Account{ "Steve", 2000 });
+	check_accounts.push_back(Checking_Account{ "Carol", 5000 });
+
+	(*utility).display(check_accounts);
+	(*utility).deposit(check_accounts, 1000);
+	(*utility).withdraw(check_accounts, 2000);
+
 	delete utility;
 
 
