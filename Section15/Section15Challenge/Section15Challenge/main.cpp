@@ -46,6 +46,7 @@ int main()
 	(*utility).display(check_accounts);
 	(*utility).deposit(check_accounts, 1000);
 	(*utility).withdraw(check_accounts, 2000);
+	(*utility).display(check_accounts);
 
 	delete utility;
 
