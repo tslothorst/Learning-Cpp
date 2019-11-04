@@ -4,6 +4,10 @@
 #include "Savings_Account.h"
 class Account_Util
 {
+public:
+	Account_Util();
+	~Account_Util();
+
 
 	// Utility helper functions for Account class
 
