@@ -14,12 +14,12 @@ bool Trust_Account::deposit(double amount)
 bool Trust_Account::withdraw(double amount)
 {
 	
-	if (NumberWithdraws < 4) 
+	if (NumberWithdraws < 4 && amount < (balance*0.2)) 
 	{
 		++NumberWithdraws;
 		return Account::withdraw(amount);
 	}
-	if(NumberWithdraws > 3)
+	if(NumberWithdraws > 3 || amount > (balance*0.2))
 		return false;
 }
 
