@@ -9,6 +9,7 @@ private:
 	static constexpr const char* def_name = "Unnamed Trust Account";
 	static constexpr double def_balance = 0.0;
 	static constexpr double def_int_rate = 0.0;
+	int NumberWithdraws{ 0 };
 protected:
 	double int_rate;
 public:

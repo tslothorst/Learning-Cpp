@@ -13,7 +13,7 @@ bool Trust_Account::deposit(double amount)
 
 bool Trust_Account::withdraw(double amount)
 {
-	int NumberWithdraws{0};
+	
 	if (NumberWithdraws < 4) 
 	{
 		++NumberWithdraws;
