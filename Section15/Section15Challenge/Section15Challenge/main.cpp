@@ -48,6 +48,25 @@ int main()
 	(*utility).withdraw(check_accounts, 2000);
 	(*utility).display(check_accounts);
 
+	// Trust accounts
+	std::vector<Trust_Account> trust_accounts;
+	trust_accounts.push_back(Trust_Account{});
+	trust_accounts.push_back(Trust_Account{ "Mike" });
+	trust_accounts.push_back(Trust_Account{ "Joel", 2000 });
+	trust_accounts.push_back(Trust_Account{ "Crow", 5000 });
+	trust_accounts.push_back(Trust_Account{ "Servo", 10000 });
+
+	(*utility).display(trust_accounts);
+	(*utility).deposit(trust_accounts, 5000);
+	(*utility).withdraw(trust_accounts, 2000);
+	(*utility).display(trust_accounts);
+	for (size_t i = 0; i < 5; i++)
+	{
+		(*utility).withdraw(trust_accounts, 25);
+		if (i > 3)
+			std::cout << "This should fail...";
+	}
+
 	delete utility;
 
 
