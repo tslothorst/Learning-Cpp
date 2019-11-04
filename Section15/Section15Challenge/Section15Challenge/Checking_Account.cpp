@@ -9,3 +9,9 @@ bool Checking_Account::withdraw(double amount)
 	balance -= withdraw_fee;
 	return Account::withdraw(amount);	
 }
+
+std::ostream& operator<<(std::ostream& os, const Checking_Account& account) 
+{
+	os << "[Savings_Account: " << account.name << ": " << account.balance << ", " << account.withdraw_fee;
+	return os;
+}
