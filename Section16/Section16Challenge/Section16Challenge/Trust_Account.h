@@ -14,7 +14,9 @@ protected:
 	double int_rate;
 public:
 	Trust_Account(std::string name = def_name, double balance = def_balance, double int_rate = def_int_rate);
-	bool deposit(double amount);
-	bool withdraw(double amount);	
+	virtual ~Trust_Account();
+	virtual bool deposit(double amount) override;
+	virtual bool withdraw(double amount) override;
+	virtual double get_balance() const override;
 };
 
