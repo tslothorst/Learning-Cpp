@@ -37,8 +37,6 @@ double Trust_Account::get_balance() const
 	return balance;
 }
 
-
-
 std::ostream& operator<<(std::ostream& os, const Trust_Account& account) {
 	os << "[Savings_Account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
 	return os;
