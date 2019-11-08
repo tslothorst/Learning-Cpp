@@ -13,9 +13,7 @@ protected:
 	double balance;
 public:
 	Account(std::string name = def_name, double balance = def_balance);
-	virtual ~Account()
-	{			
-	}
+	virtual ~Account();
 	//Account(std::string name = "Unamed Account", double balance = 0.0);
 	virtual bool deposit(double amount) = 0;
 	virtual bool withdraw(double amount) = 0;
