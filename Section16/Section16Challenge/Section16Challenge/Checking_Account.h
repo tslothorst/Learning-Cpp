@@ -12,6 +12,9 @@ private:
 	double withdraw_fee;
 public:
 	Checking_Account(std::string name = def_name, double balance = def_balance);
-	bool withdraw(double amount);
+	virtual ~Checking_Account();
+	virtual bool withdraw(double amount) override;
+	virtual bool deposit(double amount) override;
+	virtual double get_balance() const override;
 };
 
