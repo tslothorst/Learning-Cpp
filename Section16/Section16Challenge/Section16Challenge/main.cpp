@@ -12,17 +12,6 @@ int main()
 	std::cout << std::fixed;
 	Account_Util *utility = new Account_Util();
 
-	// Accounts
-	std::vector<Account> accounts;
-	accounts.push_back(Account{});
-	accounts.push_back(Account{ "Larry" });
-	accounts.push_back(Account{ "Moe", 2000 });
-	accounts.push_back(Account{ "Curly", 5000 });
-
-	(*utility).display(accounts);
-	(*utility).deposit(accounts, 1000);
-	(*utility).withdraw(accounts, 2000);
-
 	// Savings 
 
 	std::vector<Savings_Account> sav_accounts;
