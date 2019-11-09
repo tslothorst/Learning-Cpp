@@ -8,6 +8,13 @@ Trust_Account::~Trust_Account()
 {
 }
 
+void Trust_Account::print(std::ostream& os) const
+{
+	os.precision(2);
+	os << std::fixed;
+	os << "[Trust_Account: " << name << ": " << balance << ", " << int_rate << "]";
+}
+
 bool Trust_Account::deposit(double amount)
 {
 	if (amount >= 5000.00)
@@ -35,9 +42,4 @@ bool Trust_Account::withdraw(double amount)
 double Trust_Account::get_balance() const
 {
 	return balance;
-}
-
-std::ostream& operator<<(std::ostream& os, const Trust_Account& account) {
-	os << "[Savings_Account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
-	return os;
 }
