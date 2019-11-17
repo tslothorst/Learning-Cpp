@@ -28,3 +28,31 @@ int main() {
 	display(*vec_ptr);
 	return 0;
 }
+
+std::unique_ptr<std::vector<std::shared_ptr<Test>>> make()
+{
+	return std::unique_ptr<std::vector<std::shared_ptr<Test>>>();
+}
+
+void fill(std::vector<std::shared_ptr<Test>>& vec, int num)
+{
+	for (size_t i = 0; i < num; i++)
+	{
+		int userNum{};		
+		std::cout << "Please enter a whole number: ";
+		std::cin >> userNum;
+		std::shared_ptr<Test> tempptr = std::make_shared<Test>(userNum);		
+		vec.push_back(tempptr);
+	}
+}
+
+void display(const std::vector<std::shared_ptr<Test>>& vec)
+{
+	for (auto num : vec)
+	{		
+		std::cout << num->get_data() << "\n";
+	}
+}
+
+
+
