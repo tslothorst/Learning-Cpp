@@ -39,6 +39,9 @@
     <ClInclude Include="IllegalBalanceException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InsufficentFundsException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +66,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IllegalBalanceException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InsufficentFundsException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -127,6 +127,7 @@
     <ClInclude Include="Account_Util.h" />
     <ClInclude Include="Checking_Account.h" />
     <ClInclude Include="IllegalBalanceException.h" />
+    <ClInclude Include="InsufficentFundsException.h" />
     <ClInclude Include="I_Printable.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Savings_Account.h" />
@@ -137,6 +138,7 @@
     <ClCompile Include="Account_Util.cpp" />
     <ClCompile Include="Checking_Account.cpp" />
     <ClCompile Include="IllegalBalanceException.cpp" />
+    <ClCompile Include="InsufficentFundsException.cpp" />
     <ClCompile Include="I_Printable.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Savings_Account.cpp" />
