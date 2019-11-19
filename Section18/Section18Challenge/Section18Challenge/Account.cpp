@@ -26,7 +26,7 @@ bool Account::withdraw(double amount) {
 		return true;
 	}
 	else
-		return false;
+		throw InsufficentFundsException();
 }
 
 double Account::get_balance() const {
