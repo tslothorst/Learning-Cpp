@@ -3,6 +3,8 @@
 
 Account::Account(std::string name, double balance): name(name),balance(balance)
 {
+	if (balance < 0.0)
+		throw IllegalBalanceException();
 }
 
 Account::~Account() 
