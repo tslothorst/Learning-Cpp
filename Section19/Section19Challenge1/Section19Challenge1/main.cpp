@@ -21,6 +21,12 @@ struct Tours {
 	std::vector<Country> countries;
 };
 
+void seperator() 
+{
+	// 70 chars long. Can be used to visually seperate lines
+	std::cout << "\n======================================================================" << "\n";
+}
+
 int main()
 {
 	Tours tours
@@ -56,12 +62,13 @@ int main()
 
 	// Unformatted display so you can see how to access the vector elements
 	std::cout << tours.title << std::endl;
+	seperator();
 	for (auto country : tours.countries) {   // loop through the countries
 		std::cout << country.name << std::endl;
 		for (auto city : country.cities) {       // loop through the cities for each country
-			std::cout << "\t" << city.name
-				<< "\t" << city.population
-				<< "\t" << city.cost
+			std::cout << std::setw(15) << std::left << city.name
+				<< std::setw(25) << std::right << city.population
+				<< std::setw(25) << std::right << city.cost
 				<< std::endl;
 		}
 	}
