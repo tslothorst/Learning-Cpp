@@ -12,6 +12,9 @@ int main()
 		return 1;
 	}
 
+	int TotalScore{ 0 };
+	int Loops{ 0 };
+
 	std::cout << std::setw(15) << std::left << "Student Name" << std::setw(5) << std::right << "Score" << std::endl;
 
 	std::string AnswerKey{};
@@ -32,8 +35,14 @@ int main()
 			}
 		}
 
+		TotalScore += score;
+		++Loops;
+
 		std::cout << std::setw(15) << std::left << StudentName << std::setw(5) << std::right <<score << std::endl;
 
 	}
+
+	std::cout << std::setw(15) << std::left << "Avg. Score:" << std::setw(5) << std::right << (double)TotalScore/(double)Loops << std::endl;
+
 	return 0;
 }
