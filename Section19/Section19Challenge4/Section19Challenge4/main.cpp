@@ -28,6 +28,7 @@ int main()
 		std::string Temp{};
 		std::getline(InputFile, Temp);
 		OutputFile << std::setw(8) << std::left << Iteration << std::left << Temp << std::endl;
+		++Iteration;
 	}
 
 	InputFile.close();
