@@ -30,5 +30,8 @@ int main()
 		OutputFile << std::setw(8) << std::left << Iteration << std::left << Temp << std::endl;
 	}
 
+	InputFile.close();
+	OutputFile.close();
+
 	return 0;
 }
