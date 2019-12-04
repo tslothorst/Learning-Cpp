@@ -9,6 +9,7 @@ int main()
 	if (!SourceText) 
 	{
 		std::cerr << "Error reading from file \n";
+		return 1;
 	}
 
 	std::string Keyword{};
