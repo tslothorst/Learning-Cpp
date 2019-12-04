@@ -49,6 +49,8 @@ int main()
 
 	}
 
+	SourceText.close();
+
 	std::cout << TotalWordsSearched << " of words searched, " << WordCount+PartialMatch << " matches found.\n";
 	std::cout << WordCount << " full matches " << PartialMatch << " partial (substring) matches found.\n";
 
