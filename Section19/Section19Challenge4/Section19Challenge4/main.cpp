@@ -22,9 +22,10 @@ int main()
 		return 1;
 	}
 
+	int Iteration{ 1 };
+
 	while(!InputFile.eof())
 	{
-		int Iteration{ 1 };
 		std::string Temp{};
 		std::getline(InputFile, Temp);
 		OutputFile << std::setw(8) << std::left << Iteration << std::left << Temp << std::endl;
