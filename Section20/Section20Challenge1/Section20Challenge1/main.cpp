@@ -14,8 +14,8 @@ bool is_palindrome(const std::string& s)
     {
         if (isalpha(letter)) 
         {
-            d1.push_back(letter);
-            d2.push_front(letter);
+            d1.push_back(std::tolower(letter));
+            d2.push_front(std::tolower(letter));
         }
     }
 
