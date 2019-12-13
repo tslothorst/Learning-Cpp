@@ -8,8 +8,22 @@
 
 bool is_palindrome(const std::string& s)
 {
-    // You must implement this function.
-    // Since we are learning the STL - use a deque to solve the problem.
+    std::deque<char> d1;
+    std::deque<char> d2;
+    for(auto letter : s)
+    {
+        if (isalpha(letter)) 
+        {
+            d1.push_back(letter);
+            d2.push_front(letter);
+        }
+    }
+
+    if (d1 == d2) 
+    {
+        return true;
+    }
+
     return false;
 }
 
