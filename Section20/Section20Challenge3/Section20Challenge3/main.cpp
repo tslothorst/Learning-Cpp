@@ -94,8 +94,29 @@ void part2()
     std::ifstream in_file{ "words.txt" };
     if (in_file) 
     {
+        std::stringstream temp{};
+        int linecount{ 0 };
+        while (!in_file.eof()) 
+        {
+            linecount++;
+            std::getline(in_file,line);
+            temp.str(clean_string(line));
 
-        // You implement this code
+            while (!temp.eof()) 
+            {
+                temp >> word;
+                if (words.count(word))
+                {
+                    words.at(word).insert(linecount);
+                }
+                else
+                {
+                    words.insert(std::make_pair(word, std::set<int>{linecount}));
+                }
+            }
+            temp.clear();
+
+        }
 
         in_file.close();
         display_words(words);
