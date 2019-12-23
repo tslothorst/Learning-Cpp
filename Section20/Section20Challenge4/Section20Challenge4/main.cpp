@@ -1,6 +1,7 @@
 #include "main.h"
 #include <cctype>
-#include <deque>
+#include <stack>
+#include <queue>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,23 +9,28 @@
 
 bool is_palindrome(const std::string& s)
 {
-    std::deque<char> d1;
-    std::deque<char> d2;
+    std::stack<char> s1;
+    std::queue<char> q2;
     for (auto letter : s)
     {
         if (isalpha(letter))
         {
-            d1.push_back(std::tolower(letter));
-            d2.push_front(std::tolower(letter));
+            s1.push(std::tolower(letter));
+            q2.push(std::tolower(letter));
         }
     }
 
-    if (d1 == d2)
+    while(!s1.empty())
     {
-        return true;
+        if (s1.top() != q2.front()) 
+        {
+            return false;
+        }
+        s1.pop();
+        q2.pop();
     }
 
-    return false;
+    return true;
 }
 
 int main()
