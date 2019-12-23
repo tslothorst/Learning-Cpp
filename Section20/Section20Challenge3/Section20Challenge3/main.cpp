@@ -54,14 +54,27 @@ std::string clean_string(const std::string& s) {
 // Part1 process the file and builds a map of words and the 
 // number of times they occur in the file
 
-void part1() {
+void part1() 
+{
     std::map<std::string, int> words;
     std::string line;
     std::string word;
     std::ifstream in_file{ "words.txt" };
-    if (in_file) {
+    if (in_file) 
+    {
+        while (!in_file.eof()) 
+        {
+            in_file >> word;
 
-        // You implement this code
+            if (words.count(clean_string(word)))
+            {
+                words.at(clean_string(word))++;
+            }
+            else
+            {
+                words.insert(std::make_pair(clean_string(word), 1));
+            }
+        }
 
         in_file.close();
         display_words(words);
@@ -73,24 +86,28 @@ void part1() {
 
 // Part2 process the file and builds a map of words and a 
 // set of line numbers in which the word appears
-void part2() {
+void part2() 
+{
     std::map<std::string, std::set<int>> words;
     std::string line;
     std::string word;
     std::ifstream in_file{ "words.txt" };
-    if (in_file) {
+    if (in_file) 
+    {
 
         // You implement this code
 
         in_file.close();
         display_words(words);
     }
-    else {
+    else 
+    {
         std::cerr << "Error opening input file" << std::endl;
     }
 }
 
-int main() {
+int main() 
+{
     part1();
     part2();
     return 0;
